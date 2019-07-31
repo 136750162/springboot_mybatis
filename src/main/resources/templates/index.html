@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    hello Thymeleaf<br/>
+    <!--在thymeleaf 模板中   字符串的拼接除了使用+ 符号之后  还是可以使用|中间写拼接的字符串| 进行字符串的拼接 -->
+    <span th:text="|欢迎:${name}来到这里|">雷峻工</span>
+    <!--hr 代表分割符并且换行-->
+    <hr/>
+    <span th:if="${money > 1000}">小康</span>
+    <!--th:unless  代表的是else的意思  表示上面的条件不满足则执行当前的条件-->
+    <span th:unless="${money > 10000}">富贵</span>
+    <!--thymeleaf de 循环语句-->
+    <table>
+        <tr>
+            <td>id</td>
+            <td>用户名</td>
+            <td>密码</td>
+        </tr>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}">id</td>
+            <td th:text="${user.username}">用户名</td>
+            <td th:text="${user.password}">密码</tdth>
+        </tr>
+    </table>
+</body>
+</html>

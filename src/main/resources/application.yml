@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql:///1904_springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+#设置mapperxml文件的扫描位置
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
